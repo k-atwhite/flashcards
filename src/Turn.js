@@ -17,15 +17,19 @@ class Turn {
     // Method that returns a boolean indicating
     // if the user’s guess matches the correct answer on the card
     evaluateGuess() {
-        if (this.usersGuess ==== card.correctAnswer) {
-            return "correct!"
+        if (this.usersGuess === this.card.correctAnswer) {
+            return true
         } else {
-            return "incorrect!"
+            return false
         }
     };
 
     giveFeedback() {
-
+        if (this.evaluateGuess()) {
+            return 'correct!'
+        } else {
+            return 'incorrect!'
+        }
     };
 }
 

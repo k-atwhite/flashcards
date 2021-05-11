@@ -40,25 +40,34 @@ describe('Turn', function() {
     });
 
     it('should evaluate a guess', function () {
-        const turn = new Turn();
+        const turn1 = new Turn('object', card);
         card = new Card(1, "What allows you to define a set of related information using key-value pairs?", ["object", "array", "function"], "object")
-        turn.evaluateGuess()
+        turn1.evaluateGuess()
 
-        expect(turn.evaluateGuess()).to.equal('true')
+        expect(turn1.evaluateGuess()).to.equal(true)
+
+        const turn2 = new Turn('array', card);
+        card = new Card(1, "What allows you to define a set of related information using key-value pairs?", ["object", "array", "function"], "object")
+        turn2.evaluateGuess()
+
+        expect(turn2.evaluateGuess()).to.equal(false)
     });
 
-    it.skip('should give feedback if the answer is correct or incorrect', function() {
+    it('should give feedback if the answer is correct or incorrect', function() {
         
-        const card = new Card(1, 'What is Robbie\'s favorite animal', ['sea otter', 'pug', 'capybara'], 'sea otter');
-        const turn = new Turn('pug', card);
+        const turn1 = new Turn('object', card);
+        card = new Card(1, "What allows you to define a set of related information using key-value pairs?", ["object", "array", "function"], "object")
+        
+        turn1.evaluateGuess()
+        turn1.giveFeedback()
+        expect(turn1.giveFeedback()).to.equal('correct!')
 
-        turn.evaluateGuess()
-        turn.giveFeedback()
-        expect(turn.giveFeedback()).to.equal('correct!')
-
-        turn.evaluateGuess()
-        turn.giveFeedback()
-        expect(turn.giveFeedback()).to.equal('incorrect!')
+        const turn2 = new Turn('array', card);
+        card = new Card(1, "What allows you to define a set of related information using key-value pairs?", ["object", "array", "function"], "object")
+        
+        turn2.evaluateGuess()        
+        turn2.giveFeedback()
+        expect(turn2.giveFeedback()).to.equal('incorrect!')
     })
 
 });

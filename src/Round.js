@@ -3,9 +3,9 @@ const Card = require('../src/Card');
 
 
 class Round {
-    constructor(cards = []) {
-        this.deck = cards;
-        this.currentCard = cards[0];
+    constructor(deck) {
+        this.deck = deck;
+        this.currentCard = this.deck.cards[0];
         this.turnCount = 0
         this.incorrectGuesses = [];
         this.accuracy = 0
@@ -23,7 +23,7 @@ class Round {
         }
 
         this.calculatePercentCorrect()
-        this.currentCard = this.deck[this.turnCount]
+        this.currentCard = this.deck.cards[this.turnCount]
         return turn.giveFeedback()
     }
 

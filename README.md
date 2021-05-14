@@ -5,7 +5,7 @@ Do you need to brush up on your programming vocabulary? Do you love working in t
 Look no further! This project gave me the opportunity to start writing my own tests and
 practicing Test Driven Development.
 
-## NOTE TO TEACHERS - Im trying to convert a mov to a gif with ffmpeg and it is such a phenomenal pain. I will add a gif tomorrow!
+![gif](https://media.giphy.com/media/yVYOTURxdSz8PtTDkD/giphy.gif)
 
 ## Technologies Used
 This app is built exclusively with javaScript and tested using Mocha framework and Chai

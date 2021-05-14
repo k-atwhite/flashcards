@@ -34,10 +34,10 @@ class Round {
     }
 
     endRound() {
-
+      const roundStatement = `** Round over! ** You answered ${this.accuracy}% of the questions correctly!`;
+      console.log(roundStatement);
+      return roundStatement;
     }
 }
 
 module.exports = Round;
-
-
